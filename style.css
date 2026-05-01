@@ -791,17 +791,33 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
-  #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-image-side {
-    height: auto;
-    max-height: 320px;
-    padding: 0 2rem 4rem;
+
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
   }
-  .hero-img-frame { max-width: 240px; }
-  .hero-text { padding: 6rem 1.5rem 3rem; }
-  .hero-stats { gap: 0; }
+  .hero-text {
+    padding: 7rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .hero-badge-line { margin: 0 auto 1.2rem; }
+  .hero-sub { max-width: 100%; }
+  .hero-ctas { justify-content: center; }
+  .hero-stats {
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
   .stat { padding: 0 1.2rem 0 0; }
   .stat-sep { margin-right: 1.2rem; height: 28px; }
+  .hero-image-side {
+    height: auto;
+    padding: 0 2rem 5rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .hero-img-frame { max-width: 260px; }
+
   section { padding: 4rem 1.5rem; }
   .sobre-grid, .autoridade-grid, .contato-grid, .agendar-grid {
     grid-template-columns: 1fr; gap: 2rem;
@@ -816,18 +832,23 @@ footer {
 
 /* RESPONSIVE 480px */
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.2rem; }
-  .hero-ctas { flex-direction: column; }
+  .nav-cta { display: none; }
+
+  .hero-text { padding: 6.5rem 1.5rem 2rem; }
+  .hero-title { font-size: 2rem; line-height: 1.2; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-ctas { flex-direction: column; gap: 0.8rem; }
   .btn-ouro, .btn-hero { width: 100%; justify-content: center; }
-  .hero-stats { flex-direction: column; gap: 1rem; }
+  .btn-text { text-align: center; }
+  .hero-stats { flex-direction: column; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; }
   .stat-sep { display: none; }
   .stat { padding: 0; }
-  .nav-cta { display: none; }
+  .hero-image-side { padding: 0 1.5rem 4.5rem; }
+  .hero-img-frame { max-width: 200px; }
+
   section { padding: 3rem 1.2rem; }
   .servicos-grid { grid-template-columns: 1fr; }
   .numeros-grid { grid-template-columns: 1fr 1fr; }
-  .hero-image-side { max-height: 260px; }
-  .hero-img-frame { max-width: 200px; }
   .dep-em-breve { padding: 2rem 1.5rem; }
 }
 
