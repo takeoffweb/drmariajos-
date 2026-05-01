@@ -794,10 +794,41 @@ footer {
 
   #hero {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     min-height: 100vh;
+    align-items: start;
   }
+
+  /* Foto sobe para o topo */
+  .hero-image-side {
+    order: -1;
+    height: 55vw;
+    min-height: 280px;
+    max-height: 420px;
+    width: 100%;
+    padding: 0;
+    align-items: stretch;
+  }
+  .hero-img-frame {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+  .hero-img-frame::before,
+  .hero-img-frame::after { display: none; }
+  .hero-img-inner { height: 100%; }
+  .hero-img-placeholder {
+    aspect-ratio: unset;
+    height: 100%;
+    border-radius: 0;
+  }
+  .hero-img-tag {
+    bottom: 1rem;
+  }
+
+  /* Texto abaixo da foto */
   .hero-text {
-    padding: 7rem 2rem 2.5rem;
+    padding: 2.5rem 2rem 3rem;
     text-align: center;
   }
   .hero-badge-line { margin: 0 auto 1.2rem; }
@@ -805,18 +836,11 @@ footer {
   .hero-ctas { justify-content: center; }
   .hero-stats {
     justify-content: center;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.8rem;
   }
   .stat { padding: 0 1.2rem 0 0; }
   .stat-sep { margin-right: 1.2rem; height: 28px; }
-  .hero-image-side {
-    height: auto;
-    padding: 0 2rem 5rem;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .hero-img-frame { max-width: 260px; }
 
   section { padding: 4rem 1.5rem; }
   .sobre-grid, .autoridade-grid, .contato-grid, .agendar-grid {
@@ -834,17 +858,20 @@ footer {
 @media (max-width: 480px) {
   .nav-cta { display: none; }
 
-  .hero-text { padding: 6.5rem 1.5rem 2rem; }
+  .hero-image-side {
+    height: 62vw;
+    min-height: 240px;
+    max-height: 320px;
+  }
+  .hero-text { padding: 2rem 1.2rem 2.5rem; }
   .hero-title { font-size: 2rem; line-height: 1.2; }
-  .hero-sub { font-size: 0.95rem; }
+  .hero-sub { font-size: 0.9rem; }
   .hero-ctas { flex-direction: column; gap: 0.8rem; }
   .btn-ouro, .btn-hero { width: 100%; justify-content: center; }
   .btn-text { text-align: center; }
-  .hero-stats { flex-direction: column; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; }
+  .hero-stats { flex-direction: column; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; }
   .stat-sep { display: none; }
   .stat { padding: 0; }
-  .hero-image-side { padding: 0 1.5rem 4.5rem; }
-  .hero-img-frame { max-width: 200px; }
 
   section { padding: 3rem 1.2rem; }
   .servicos-grid { grid-template-columns: 1fr; }
